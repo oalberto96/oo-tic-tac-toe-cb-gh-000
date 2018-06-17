@@ -116,6 +116,16 @@ class TicTacToe
     return result
   end
 
-
+  def play
+    until over?
+      turn
+    end
+    message = winner
+    if won?
+      puts "Congratulations #{message}!"
+    else
+      puts "Cat's Game!"
+    end
+  end
 
 end
