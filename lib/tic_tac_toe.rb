@@ -101,6 +101,19 @@ class TicTacToe
     full?() || draw?() || won?()
   end
 
+  def winner
+    result = nil
+    if over?(board)
+      if won?(board)
+        if (won?(board).all?{|index| board[index] == "X"})
+          result = "X"
+        else
+          result = "O"
+        end
+      end
+    end
+    return result
+  end
 
 
 
