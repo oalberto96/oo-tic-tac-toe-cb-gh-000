@@ -1,6 +1,6 @@
 
 class TicTacToe
-  
+
   WIN_COMBINATIONS = [
     [0, 1, 2], #Top row
     [3, 4, 5], #Middle row
@@ -11,11 +11,11 @@ class TicTacToe
     [1, 4, 7], #center column
     [2, 5, 8] #right column
   ]
-  
+
   def initialize
     @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   end
-  
+
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
@@ -23,26 +23,26 @@ class TicTacToe
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
-  
+
   def input_to_index(user_input)
     user_input.to_i - 1
   end
-  
+
   def move(index, value = "X")
     @board[index] = value
   end
-  
+
   def position_taken?(index)
     !(@board[index].nil? || @board[index] == " ")
   end
-  
+
   def valid_move?(index)
     if index.between?(0,8) && position_taken?(index) != true
       return true
     end
     return false
   end
-  
+
   def turn
     puts "Please enter 1-9:"
     user_input = gets.strip
@@ -54,7 +54,7 @@ class TicTacToe
       turn()
     end
   end
-  
+
   def turn_count
     count = 0
     @board.each do |square|
@@ -64,7 +64,7 @@ class TicTacToe
     end
     return count
   end
-  
+
   def current_player
     if turn_count() % 2 == 0
       return "X"
@@ -72,16 +72,16 @@ class TicTacToe
       return "O"
     end
   end
-  
+
   def won?
     WIN_COMBINATIONS.each do |combination|
-      if combination.all?{|index|  board[index] == "X"} || combination.all?{|index| board[index] == "O"}
+      if combination.all?{|index|  @board[index] == "X"} || combination.all?{|index| @board[index] == "O"}
         return combination
       end
     end
     return false
   end
-  
-  
-  
+
+
+
 end
