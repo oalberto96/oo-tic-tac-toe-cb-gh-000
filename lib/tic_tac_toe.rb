@@ -105,7 +105,7 @@ class TicTacToe
     result = nil
     if over?()
       if won?()
-        if (won?().all?{|index| @board[index] == "X"})
+        if (won?.all?{|index| @board[index] == "X"})
           result = "X"
         else
           result = "O"
