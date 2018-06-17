@@ -1,6 +1,6 @@
 
 class TicTacToe
-  
+
   WIN_COMBINATIONS = [
     [0, 1, 2], #Top row
     [3, 4, 5], #Middle row
@@ -11,7 +11,7 @@ class TicTacToe
     [1, 4, 7], #center column
     [2, 5, 8] #right column
   ]
-  
+
   def initialize(board)
     @board = board
   end
@@ -28,6 +28,4 @@ class TicTacToe
     user_input.to_i - 1
   end
 
-  
-  
 end
