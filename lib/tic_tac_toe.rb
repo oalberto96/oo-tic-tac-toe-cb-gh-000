@@ -86,6 +86,18 @@ class TicTacToe
     @board.all?{|space| (space == "X" || space == "O")}
   end
 
+  def draw?
+    result = false
+    if won?()
+      result = false
+    elsif full?()
+      result = true
+    else
+      result = false
+    end
+  end
+
+
 
 
 end
